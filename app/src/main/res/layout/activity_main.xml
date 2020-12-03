@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background_main"
+    >
+
+    <ImageView
+        android:id="@+id/icon_fondo"
+        android:layout_width="260dp"
+        android:layout_height="190dp"
+        android:src="@drawable/icon_fondo"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageView
+        android:id="@+id/icon_logo"
+        android:layout_width="260dp"
+        android:layout_height="160dp"
+        android:src="@drawable/icon"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <EditText
+        android:id="@+id/edtMain_email"
+        style="@style/AppTheme.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="232dp"
+        android:drawableStart="@drawable/icon_email"
+        android:hint="@string/app_main_email"
+        android:inputType="textEmailAddress"
+        app:backgroundTint="@color/colorBlanco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icon_logo" />
+
+    <EditText
+        android:id="@+id/edtMain_password"
+        style="@style/AppTheme.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/icon_key"
+        android:drawableEnd="@drawable/icon_eyes"
+        android:hint="@string/app_main_password"
+        android:layout_marginTop="32dp"
+        app:backgroundTint="@color/colorBlanco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtMain_email"
+        android:inputType="textPassword"
+        />
+
+    <Button
+        android:id="@+id/bttGotoIndex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_style"
+        android:backgroundTint="@color/colorBlanco"
+
+
+        android:text="@string/app_main_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtMain_password"
+
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="GoToIndex"
+        />
+
+
+    <Button
+        android:id="@+id/bttGotoRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/btn_style"
+
+
+        android:backgroundTint="@color/colorBlanco"
+        android:onClick="GoToRegistrar"
+        android:text="@string/app_main_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bttGotoIndex"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

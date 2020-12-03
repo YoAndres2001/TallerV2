@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Taller previo </string>
+
+    // Layout Activity_main
+    <string name="app_main_email">Ingrese su correo</string>
+    <string name="app_main_password">Ingresa su contraseña</string>
+    <string name="app_main_login">Iniciar Sesión</string>
+    <string name="app_main_register">Registrarse</string>
+
+    // Layout Activity_Create_user
+    <string name="app_create_correo">Ingrese un correo</string>
+    <string name="app_create_password">Ingrese una contraseña</string>
+    <string name="app_create_registrar">Crear Cuenta</string>
+
+    // Layout Activity_CrudIndex
+    <string name="app_crudIndex_Menu">Menu</string>
+
+    // Layout Activity_crud_registrar y modificar
+    <string name="app_Crud_Ind_Upd_ID">ID de la Tarea</string>
+    <string name="app_Crud_Ind_Upd_ID_Usuario">ID del usuario</string>
+    <string name="app_Crud_Ind_Upd_Nombre">Nombre de Tarea</string>
+    <string name="app_Crud_Ind_Upd_Descripcion">Descripción de Tarea</string>
+    <string name="app_Crud_Ind_Upd_Prioridad">Prioridad: </string>
+    <string name="app_Crud_Ind_Upd_Estado">Estado: </string>
+    <string name="app_Crud_Ind_Upd_Crear">Crear Tarea</string>
+    <string name="app_Crud_Ind_Upd_Modificar">Modificar Tarea</string>
+
+    // Layout Activity_crudbuscar y eliminar
+    <string name="app_Crud_Sel_Del_ID">Ingrese ID de la Tarea a Buscar</string>
+    <string name="app_Crud_Sel_Del_ID_Usuario">Id de usuario: </string>
+    <string name="app_Crud_Sel_Del_Nombre">Nombre de Tarea: </string>
+    <string name="app_Crud_Sel_Del_Descripcion">Descipción de Tarea: </string>
+    <string name="app_Crud_Sel_Del_Prioridad">Prioridad: </string>
+    <string name="app_Crud_Sel_Del_Estado">Estado: </string>
+    <string name="app_Crud_Sel_Del_Buscar">Buscar Tarea</string>
+    <string name="app_Crud_Sel_Del_Eliminar">Eliminar Tarea</string>
+
+    // Cancelar
+    <string name="app_cancelar">Cancelar</string>
+    <string name="app_Index_Admin">Menu de Administrador</string>
+
+</resources>

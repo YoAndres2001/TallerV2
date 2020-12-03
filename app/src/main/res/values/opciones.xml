@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="combo_prioridad">
+        <item>Selecionar</item>
+        <item>Bajo</item>
+        <item>Mediano</item>
+        <item>Alto</item>
+        <item>Urgente</item>
+    </string-array>
+
+    <string-array name="combo_estados">
+        <item>Selecionar</item>
+        <item>Pendiente</item>
+        <item>En Proceso</item>
+        <item>Terminado</item>
+    </string-array>
+
+
+
+    
+    
+</resources>
