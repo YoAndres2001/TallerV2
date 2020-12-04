@@ -32,7 +32,7 @@ public class CrudDelete extends AppCompatActivity {
     }
 
     public void EliminarTarea(View view){
-        GestorBD gestor = new GestorBD(this, "Tasks", null, 1);
+        GestorBD gestor = new GestorBD(this, "BDUsuarios", null, 1);
         SQLiteDatabase db = gestor.getWritableDatabase();
 
         String id = edtDetalle_id.getText().toString();

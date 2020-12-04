@@ -7,6 +7,7 @@
     tools:context=".CrudSelectAdmin"
     android:background="@drawable/background_red"
     >
+    EditText edtDetalle_ema;
 
     <ImageView
         android:id="@+id/icon_fondo"
@@ -35,20 +36,22 @@
         app:layout_constraintVertical_bias="0.028" />
 
     <EditText
-        android:id="@+id/edtDetalle_id"
+        android:id="@+id/edtDetalle_email"
         style="@style/AppTheme.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="@string/app_Crud_Sel_Del_ID"
+        android:hint="Ingresa el email del trabajador"
         app:backgroundTint="@color/colorBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/icon_logo"
+        android:inputType="textEmailAddress"
+        />
 
     <Button
         android:id="@+id/btt_buscar_TareaID"
-        android:text="@string/app_Crud_Sel_Del_Buscar"
+        android:text="@string/app_buscar_empleado"
         style="@style/AppTheme.Button"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
@@ -59,9 +62,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtDetalle_id"
+        app:layout_constraintTop_toBottomOf="@+id/edtDetalle_email"
         app:layout_constraintVertical_bias="0.0"
-        android:onClick="BuscarTarea"
+        android:onClick="BuscarEmpleado"
         />
     <Button
         android:id="@+id/ButtonCancelar"
@@ -84,65 +87,23 @@
         />
 
     <TextView
-        android:id="@+id/txtDetalle_nametarea"
-        style="@style/AppTheme.Text"
+        android:id="@+id/txtView_lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_Crud_Sel_Del_Nombre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonCancelar"
-        app:layout_constraintVertical_bias="0.086" />
+        android:layout_marginTop="28dp"
+        android:text="@string/app_lista"
+        android:textColor="@color/colorBlanco"
+        android:textSize="30sp"
 
-    <TextView
-        android:id="@+id/txtDetalle_id_usuario"
-        style="@style/AppTheme.Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_Crud_Sel_Del_ID_Usuario"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetalle_nametarea"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/ButtonCancelar" />
 
-    <TextView
-        android:id="@+id/txtDetalle_descripcion"
-        style="@style/AppTheme.Text"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_Crud_Sel_Del_Descripcion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetalle_id_usuario"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TextView
-        android:id="@+id/txtDetalle_prioridad"
-        style="@style/AppTheme.Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_Crud_Sel_Del_Prioridad"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetalle_descripcion"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TextView
-        android:id="@+id/txtDetalle_estado"
-        style="@style/AppTheme.Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_Crud_Sel_Del_Estado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDetalle_prioridad"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_lista"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

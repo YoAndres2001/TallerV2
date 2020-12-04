@@ -35,31 +35,18 @@
         app:layout_constraintVertical_bias="0.028" />
 
     <EditText
-        android:id="@+id/edtcreateid"
-        style="@style/AppTheme.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:hint="Ingrese su rut sin -"
-        android:inputType="textEmailAddress"
-        app:backgroundTint="@color/colorBlanco"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/icon_logo" />
-
-    <EditText
         android:id="@+id/edtcreateemail"
         style="@style/AppTheme.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/app_create_correo"
         android:inputType="textEmailAddress"
         app:backgroundTint="@color/colorBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edtcreateid" />
+        app:layout_constraintTop_toBottomOf="@+id/icon_logo"
+        tools:layout_editor_absoluteY="240dp" />
 
     <EditText
         android:id="@+id/edtcreatepass"

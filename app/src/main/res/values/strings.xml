@@ -38,5 +38,7 @@
     // Cancelar
     <string name="app_cancelar">Cancelar</string>
     <string name="app_Index_Admin">Menu de Administrador</string>
+    <string name="app_lista">Lista</string>
+    <string name="app_buscar_empleado">Buscar Empleado</string>
 
 </resources>

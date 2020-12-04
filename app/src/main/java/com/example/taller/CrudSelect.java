@@ -35,7 +35,7 @@ public class CrudSelect extends AppCompatActivity {
     }
 
     public void BuscarTarea(View view){
-        GestorBD gestor = new GestorBD(this, "Tasks", null, 1);
+        GestorBD gestor = new GestorBD(this, "BDUsuarios", null, 1);
         SQLiteDatabase db = gestor.getWritableDatabase();
 
         String id = edtDetalle_id.getText().toString();

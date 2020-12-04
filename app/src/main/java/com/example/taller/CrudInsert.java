@@ -57,7 +57,7 @@ public class CrudInsert extends AppCompatActivity {
 
     public void RegistarTarea(View view){
 
-        GestorBD gestor = new GestorBD(this, "Tasks", null, 1);
+        GestorBD gestor = new GestorBD(this, "BDUsuarios", null, 1);
         SQLiteDatabase db = gestor.getWritableDatabase();
 
         String id = editText_CrudID.getText().toString();

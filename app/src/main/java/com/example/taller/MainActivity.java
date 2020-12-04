@@ -3,68 +3,64 @@ package com.example.taller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SearchRecentSuggestionsProvider;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.opengl.GLDebugHelper;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     String correo = "admin@empresa.com";
-    String clave = "admin123";
-    EditText edtMain_email;
-    EditText edtMain_password;
+    String clave = "clave";
+    EditText email, pass;
+    Button login, registrarse;
+    daoUsuario dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        email=(EditText)findViewById(R.id.edtMain_email);
+        pass=(EditText)findViewById(R.id.edtMain_password);
+        login=(Button)findViewById(R.id.bttGotoIndex);
+        registrarse=(Button)findViewById(R.id.bttGotoRegistrar);
+        dao=new daoUsuario(this);
 
-        edtMain_email = findViewById(R.id.edtMain_email);
-        edtMain_password = findViewById(R.id.edtMain_password);
+        login.setOnClickListener(this);
+        registrarse.setOnClickListener(this);
 
     }
 
 
-    public void GoToIndex (View view){
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bttGotoIndex:
+                String em=email.getText().toString();
+                String pas=pass.getText().toString();
+                if(em.equals("")&&pas.equals("")){
+                    Toast.makeText(this,"Los campos están vacios",Toast.LENGTH_LONG).show();
+                } else if(dao.login(em,pas)==1) {
+                    Usuario ux=dao.getUsuario(em,pas);
+                    Toast.makeText(this,"Bienvenido a la app", Toast.LENGTH_LONG).show();
+                    Intent i2= new Intent(MainActivity.this, CrudIndex.class);
+                    i2.putExtra("Id",ux.getId());
+                    startActivity(i2);
+                } else if (em.equals(correo)&&pas.equals(clave)){
+                    Toast.makeText(this, "Bienvenido administrador", Toast.LENGTH_LONG).show();
+                    Intent i3=new Intent(MainActivity.this,IndexAdmin.class);
+                    startActivity(i3);
+                } else {
+                    Toast.makeText(this, "Usuario y/o contraseña incorrecta", Toast.LENGTH_LONG).show();
+                }
 
-        if (correo.equals(edtMain_email.getText().toString()) && clave.equals(edtMain_password.getText().toString())) {
-            Intent ActivityirgotoIndexadmin = new Intent(this, IndexAdmin.class);
-            startActivity(ActivityirgotoIndexadmin);
-            Toast.makeText(this, "Bienvenido al home", Toast.LENGTH_LONG).show();
-
-        } else {
-            Intent Activityirgotocrudindex = new Intent(this, CrudIndex.class);
-            startActivity(Activityirgotocrudindex);
-            
-            //GestorBD gestor = new GestorBD(this, "Tasks", null, 1);
-            //SQLiteDatabase db = gestor.getWritableDatabase();
-
-            //String email = edtMain_email.getText().toString();
-
-
-            //Cursor datos = db.rawQuery("select email from users where email =" + email, null);
-            //if (datos.moveToFirst()){
-                //edtMain_email.setText("");
-                //startActivity(Activityirgotocrudindex);
-                //db.close();
-            //}else{
-                //Toast.makeText(this, "No existen registros asociados a este id", Toast.LENGTH_SHORT).show();
-            //}
-
-            //db.close();
+                break;
+            case R.id.bttGotoRegistrar:
+                Intent i=new Intent(MainActivity.this,CreateUser.class);
+                startActivity(i);
+                break;
         }
+
     }
-
-
-
-    public void GoToRegistrar (View view){
-        Intent ActivityirRegistrar = new Intent(this, CreateUser.class);
-        startActivity(ActivityirRegistrar);
-    }
-
-
+    
 }
